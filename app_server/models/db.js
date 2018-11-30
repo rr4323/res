@@ -1,5 +1,6 @@
 var mongoose=require('mongoose');
-var dbUri='mongodb://localhost:27017/res';
+//var dbUri='mongodb://localhost:27017/res';
+var dbUri='mongodb+srv://rajeev:rajeev4323@cluster0-cxttc.azure.mongodb.net/res?retryWrites=true';
 mongoose.connect(dbUri,{useNewUrlParser: true });
 mongoose.connection.on('connected', () => {
   console.log(`Mongoose connected to ${dbUri}`);
