@@ -1,0 +1,24 @@
+extend layout
+include _includes/sharedHTMLfunctions
+block content
+  .jumbotron
+    .card.bg-success.my-1
+      .card-header
+        h4=name
+          small &nbsp;
+            +outputRating(rating)
+      .card-body
+        p=address
+    .card.bg-success.my-1
+      .card-header
+        h2 Cutomer Review
+          a.btn.btn-secondary.float-right(href="/restaurant/"+_id+"/addReview") Add Review
+      .card-body
+        each review in reviews
+          .card.bg-success.my-1
+            .card-header
+              h4=review.name
+                small.float-right &nbsp;
+                  +outputRating(review.rating)
+            .card-body
+              p=review.comment

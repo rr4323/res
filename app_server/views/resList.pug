@@ -1,0 +1,29 @@
+extend layout
+include _includes/sharedHTMLfunctions
+block content
+  nav.navbar.justify-content-end.bg-success.fixed
+    form.form-inline.justify-content.bg-success
+      .form-group
+        select.form-control.bg-success
+          option.selected state
+          option Delhi
+      .form-group
+        select.form-control.bg-success
+          option.selected country
+          option India
+      .form-group
+        select.form-control.bg-success
+          option.selected city
+          option noida
+      .form-group
+          input.form-control(type="search").bg-secondary
+          button.btn.btn-success.border-secondary.my-2.my-sm-0(type="submit").text-dark Search
+    
+  .card.bg-success.my-1
+    .card-header
+      h4
+        a.text-dark(href='/restaurant/'+_id)=name
+        small &nbsp;
+          +outputRating(rating)
+    .card-body
+      p=address
